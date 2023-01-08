@@ -24,6 +24,7 @@
 			<artifactId>kafka-clients</artifactId>
 			<version>1.1.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
 
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 		<dependency>

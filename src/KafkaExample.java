@@ -7,6 +7,7 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Properties;
@@ -98,7 +99,7 @@ public class KafkaExample {
         one.start();
     }
 */
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException {
 //		String brokers = System.getenv("CLOUDKARAFKA_BROKERS");
 //		String username = System.getenv("CLOUDKARAFKA_USERNAME");
 //		String password = System.getenv("CLOUDKARAFKA_PASSWORD");

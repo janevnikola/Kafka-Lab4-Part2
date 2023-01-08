@@ -14,6 +14,7 @@ class VrataProstorijaSender extends Thread{//ovie se producers
     }
 
 
+
    //TODO: При
     //TODO: отварањето на секоја врата се праќа информацијата кој отклучил, кој тип на корисник е
     //TODO: (професор, студент), во која просторија и каков тип на просторија (училница, лабораторија,
@@ -49,15 +50,15 @@ class VrataProstorijaSender extends Thread{//ovie se producers
                         //(String topic, Integer partition, Long timestamp, K key, V value)
 
                         producerStudent.send(new ProducerRecord<String, String>(KafkaExample.topic,
-                                partition, timestamp, "student", informacii_studentLab.toString()));
-                        producerStudent.send(new ProducerRecord<String, String>(KafkaExample.topic,
-                                partition, timestamp, "profesor", informacii_studentKancelarija.toString()));
-
-                     /*   producerProfesor.send(new ProducerRecord<String, String>(KafkaExample.topic,
-                                partition, timestamp, "laboratorija", informacii_profesorLab.toString()));
+                                partition, timestamp, "laboratorija", informacii_studentLab.toString()));
                         producerProfesor.send(new ProducerRecord<String, String>(KafkaExample.topic,
-                                partition, timestamp, "kancelarija", informacii_profesorKancelarija.toString()));
-                     */   Thread.sleep(1000);
+                                partition, timestamp, "kancelarija", informacii_studentKancelarija.toString()));
+
+                        producerStudent.send(new ProducerRecord<String, String>(KafkaExample.topic,
+                                partition, timestamp, "kancelarija", informacii_profesorLab.toString()));
+                        producerProfesor.send(new ProducerRecord<String, String>(KafkaExample.topic,
+                                partition, timestamp, "laboratorija", informacii_profesorKancelarija.toString()));
+                        Thread.sleep(1000);
                         i++;
 
                     }
